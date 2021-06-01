@@ -16,7 +16,7 @@ export default NewPage = () => {
       });
     dispatch(setProducts(response.data));
   };
-// below is how i would filter data recieved from an api call before setting them in the store. 
+  // below is how i would filter data recieved from an api call before setting them in the store.
   // const filterdata = (data, email)=> {
   //   const filtereddata = data.filter(d=> d.email!= email)
   //   return filterdata;
@@ -26,21 +26,21 @@ export default NewPage = () => {
   useEffect(() => {
     fetchingProducts();
   }, []);
-  const addedlength = useSelector((state)=> state.selectedProducts.products)
+  const addedlength = useSelector((state) => state.selectedProducts.products);
 
   return (
     <div>
       Number of products added to cart: {addedlength.length}
+      added to github
       <div className="container-fluid">
-        <div className='row'>
-          <div className='col-md-8'>
+        <div className="row">
+          <div className="col-md-8">
             {products.map((product) => (
-            <SingleProduct product={product} key={product.id} />
+              <SingleProduct product={product} key={product.id} />
             ))}
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
